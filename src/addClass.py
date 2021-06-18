@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 
+#adds class
 class AddClass(QDialog):
     def __init__(self):
         super(AddClass,self).__init__()
