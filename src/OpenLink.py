@@ -9,7 +9,7 @@ class LinkOpener:
     
     def isValid(self, urlStr):
         
-        if (urlStr.index("htt") == -1):
+        if (urlStr[0] != 'h' or urlStr[1] != 't'):
             urlStr = "https://" + urlStr
             self.theURL = urlStr
         valid=validators.url(urlStr)   
@@ -17,7 +17,6 @@ class LinkOpener:
             return True
         else:
             return False
-
 
 
 
