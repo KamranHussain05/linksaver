@@ -19,6 +19,18 @@ class AddClass(QDialog):
         print("Class Link: " + courseLink)
         print("Meeting Link: " + meetingLink)
 
+    def getCourseName(self):
+        courseName=self.className.text()
+        return courseName
+
+    def getCourseLink(self):
+        courseLink = self.classLink.text()
+        return courseLink
+
+    def getMeetingLink(self):
+        meetingLink = self.meetingLink.text()
+        return meetingLink
+
 app=QApplication(sys.argv)
 mainwindow=AddClass()
 widget=QtWidgets.QStackedWidget()

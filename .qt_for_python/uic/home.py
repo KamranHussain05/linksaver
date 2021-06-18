@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1406, 934)
+        MainWindow.resize(1406, 941)
         MainWindow.setStyleSheet("background-color:   rgb(68, 68, 68);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 100, 1401, 751))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 100, 1401, 771))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -57,6 +57,16 @@ class Ui_MainWindow(object):
         self.groupBox_8 = QtWidgets.QGroupBox(self.gridLayoutWidget)
         self.groupBox_8.setObjectName("groupBox_8")
         self.gridLayout.addWidget(self.groupBox_8, 1, 3, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(0, 870, 1411, 71))
+        self.label_2.setStyleSheet("background-color: rgb(86, 124, 158);\n"
+"color: rgb(255,255,255);\n"
+"font-size:28pt;\n"
+"text-align: center;\n"
+"")
+        self.label_2.setText("")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
