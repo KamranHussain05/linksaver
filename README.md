@@ -1,2 +1,28 @@
 # linksaver
-k
+
+send help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i wanna dieeee
