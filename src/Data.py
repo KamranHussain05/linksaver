@@ -1,32 +1,35 @@
 class Data:
     strings = []
+
     def __init__(self, num):
-        for x in range num:
-            strings.append("")
-    def replaceStrings( num, s):
-		strings.pop(num)
-		strings.insert(num,s)
-    def getFullString(n):
-        return strings[n]
-    def getCourseName(n):
-        s = strings[n]
-        if(s.index(";") != -1):
-            newString = strings[s.index(';')+1:]
+        for x in range(num):
+            self.strings.append("")
+
+    def replaceStrings(self, num, s):
+        self.strings.pop(num)
+        self.strings.insert(num, s)
+
+    def getFullString(self, n):
+        return self.strings[n]
+
+    def getCourseName(self, n):
+        s = self.strings[n]
+        if (s.index(";") != -1):
+            newString = self.strings[s.index(';') + 1:]
             endInd = newString.find(";")
-            return strings[s.index(';'):endInd]
-        else:
-            return ""
-    def getMeetingLink(n):
-        s = strings[n]
-        if(s.index(";") != -1):
-            newString = strings[s.index(';')+1:]
-            endInd = newString.find(";")
-            return strings[endInd]
+            return self.strings[s.index(';'):endInd]
         else:
             return ""
 
-    def printStrings():
-        for s in strings:
+    def getMeetingLink(self, n):
+        s = self.strings[n]
+        if (s.index(";") != -1):
+            newString = self.strings[s.index(';') + 1:]
+            endInd = newString.find(";")
+            return self.strings[endInd]
+        else:
+            return ""
+
+    def printStrings(self):
+        for s in self.strings:
             print(s)
-        
-
