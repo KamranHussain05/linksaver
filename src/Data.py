@@ -1,3 +1,5 @@
+from FileChanger import FileChanger
+
 class Data:
     strings = []
 
@@ -33,3 +35,4 @@ class Data:
     def printStrings(self):
         for s in self.strings:
             print(s)
+

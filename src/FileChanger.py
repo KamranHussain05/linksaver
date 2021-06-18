@@ -2,7 +2,6 @@
 # read the file on startup (or create one if there isn't one present)
 # and write to it as changes occur on HomeGui/AddCourse
 import os.path
-import csv
 
 
 class FileChanger:
@@ -11,14 +10,14 @@ class FileChanger:
     # Returns whether a file is present or not
     @staticmethod
     def check_file():
-        return os.path.isfile('data.csv')
+        return os.path.isfile('data.txt')
 
     # Create new file 'data.csv'
     # Only call if check_file() returns False
     @staticmethod
     def create_file():
         try:
-            with open('data.csv', 'w', newline='') as myfile:
+            with open('data.txt', 'w', newline='') as file:
                 return
         except Exception as e:
             print('Error Creating File: ', e)
@@ -33,14 +32,11 @@ class FileChanger:
 
         # tries to read 'data.txt' and then input it into Data object d
         try:
-            with open('data.csv', 'r') as file:
-                reader = csv.reader(file)
-                for row in reader:
-                    # loop through 3 values in row
-                    for i in range(3):
-                        data = row[i]  # row[i] is element
-                        d.replaceStrings(num, data)
-                        num += 1
+            with open('data.txt') as f:
+                for line in f:
+                    data = line.rstrip()
+                    d.replaceStrings(num, data)
+                    num += 1
 
         except Exception as e:
             print('Error Reading File: ', e)
@@ -49,13 +45,15 @@ class FileChanger:
     # File has to be created before calling
     # param - info string list (ArrayList) being converted into 'data.csv' file
     def write_file(info):
-        with open('data.csv', 'w') as file:
+        with open('data.txt', 'w') as file:
             try:
                 # creating a csv writer object
-                csvwriter = csv.writer(file)
+                # csvwriter = csv.writer(file)
 
                 for i in info:
                     # writing the fields
-                    csvwriter.writerow(i)
+                    file.write(i + '\n')
+
+                print('file write success')
             except Exception as e:
                 print('Error writing to file: ', e)
