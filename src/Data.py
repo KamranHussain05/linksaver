@@ -9,15 +9,21 @@ class Data:
     def getFullString(n):
         return strings[n]
     def getCourseName(n):
-        r = ""
         s = strings[n]
         if(s.index(";") != -1):
             newString = strings[s.index(';')+1:]
-            n = newString.find(";")
-            return strings[s.index(';'):n]
+            endInd = newString.find(";")
+            return strings[s.index(';'):endInd]
         else:
             return ""
     def getMeetingLink(n):
+        s = strings[n]
+        if(s.index(";") != -1):
+            newString = strings[s.index(';')+1:]
+            endInd = newString.find(";")
+            return strings[endInd]
+        else:
+            return ""
 
     def printStrings():
         for s in strings:
