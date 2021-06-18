@@ -1,3 +1,7 @@
+#Author: Kamran Hussain
+#Date: 6/18/21
+#Dependencies: PyQt5, home.ui, homegui.py,
+
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
@@ -8,9 +12,9 @@ class AddClass(QDialog):
     def __init__(self):
         super(AddClass,self).__init__()
         loadUi("addClassGUI.ui",self)
-        self.classEntered.clicked.connect(self.loginfunction)
+        self.classEntered.clicked.connect(self.classDataInput)
 
-    def loginfunction(self):
+    def classDataInput(self):
         courseName=self.className.text()
         courseLink=self.classLink.text()
         meetingLink=self.meetingLink.text()
@@ -18,6 +22,7 @@ class AddClass(QDialog):
         print("Class Name: " + courseName)
         print("Class Link: " + courseLink)
         print("Meeting Link: " + meetingLink)
+        AddClass.close()
 
     def getCourseName(self):
         courseName=self.className.text()
