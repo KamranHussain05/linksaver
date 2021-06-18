@@ -87,7 +87,7 @@ font-size: 16pt;</string>
     <string>Enter</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="courseLink">
+  <widget class="QLineEdit" name="classLink">
    <property name="geometry">
     <rect>
      <x>170</x>
