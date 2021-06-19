@@ -11,6 +11,9 @@ class Data:
         self.strings.pop(num)
         self.strings.insert(num, s)
 
+    def returnStrings(self):
+        return self.strings
+
     def getFullString(self, n):
         return self.strings[n]
 
@@ -35,4 +38,3 @@ class Data:
     def printStrings(self):
         for s in self.strings:
             print(s)
-

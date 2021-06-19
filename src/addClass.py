@@ -1,6 +1,9 @@
 #Author: Kamran Hussain
 #Date: 6/18/21
 #Dependencies: PyQt5, home.ui, homegui.py,
+from FileChanger import FileChanger
+from HomeGui import HomeGui
+
 
 import sys
 from PyQt5 import QtWidgets
@@ -14,6 +17,7 @@ class AddClass(QDialog):
         loadUi("addClassGUI.ui",self)
         self.classEntered.clicked.connect(self.classDataInput)
 
+    # called when user presses save
     def classDataInput(self):
         courseName=self.className.text()
         courseLink=self.classLink.text()
@@ -24,17 +28,23 @@ class AddClass(QDialog):
         print("Meeting Link: " + meetingLink)
         AddClass.close()
 
-    def getCourseName(self):
-        courseName=self.className.text()
-        return courseName
-
-    def getCourseLink(self):
+    # Write to list
+    # pass in Data object d and course number
+    def writeToList(self, d, num):
+        courseName = self.className.text()
         courseLink = self.classLink.text()
-        return courseLink
-
-    def getMeetingLink(self):
         meetingLink = self.meetingLink.text()
-        return meetingLink
+
+        # future => check if url is valid
+        s = courseName + ';' + courseLink + ';' + meetingLink
+        d.replaceStrings(num, s)
+        try:
+            FileChanger.write_file(d.returnStrings())
+        except Exception as e:
+            print("Error WriteToList: ", e)
+
+        HomeGui.refresh();
+
 
 app=QApplication(sys.argv)
 mainwindow=AddClass()
