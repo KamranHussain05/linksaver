@@ -16,6 +16,7 @@ class LinkOpener:
         if (valid):
             return True
         else:
+            print("this link is not valid!")
             return False
 
 
