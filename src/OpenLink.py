@@ -1,17 +1,17 @@
-import webbrowser, validators
-
+import validators
+import webbrowser
 
 class LinkOpener:
     theURL = ""
 
-    def __init__(self, toOpen):
+    def openLink(self, toOpen):
         theURL = toOpen
         if (self.isValid(theURL)):
             webbrowser.open(theURL)
 
     def isValid(self, urlStr):
 
-        if (urlStr[0] != 'h' or urlStr[1] != 't'):
+        if urlStr[0] != 'h' or urlStr[1] != 't':
             urlStr = "https://" + urlStr
             self.theURL = urlStr
         valid = validators.url(urlStr)

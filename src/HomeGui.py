@@ -67,7 +67,7 @@ class Home(QDialog):
         print('Launching Course 1')
         d = Data(8)
         print('got here')
-        print(d.getMeetingLink(self, 1))
+        LinkOpener.openLink(Data.getCourseName(0))
 
     def launchCourse_2(self):
         print('Launching Course 2')
