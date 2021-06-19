@@ -30,7 +30,7 @@ class Data:
             print("not a valid index!")
             return
         s = self.strings[n]
-        if (s.index(";") != -1):
+        if (s.find(";") != -1):
             newString = self.strings[s.index(';') + 1:]
             endInd = newString.find(";")
             return self.strings[s.index(';'):endInd]
@@ -41,24 +41,14 @@ class Data:
         if (n>self.total):
             print("not a valid index!")
             return
-        s = self.strings[n]
-        if (s.index(";") != -1 and s.rindex(";") != -1):
-
-            # s.substring(s.indexOf(';')+1, s.lastIndexOf(';')); => ?
-            # s.substring(s.lastIndexOf(';')+1); => self.strings[s.index(';') + 1:]
-
-            newString = self.strings[s.index(';') + 1:]
-            endInd = newString.find(";")
-            return self.strings[endInd]
-        else:
-            return ""
-
+        s = self.strings[n] 
+        
     def getMeetingLink(self, n):
         if n > self.total:
             print("not a valid index!")
             return
         s = self.strings[n]
-        if s.index(";") != -1:
+        if s.find(";") != -1:
             # error here - code disappears
             newString = self.strings[s.index(';') + 1:]
             endInd = newString.find(";")
