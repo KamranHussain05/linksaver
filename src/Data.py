@@ -1,15 +1,17 @@
 from FileChanger import FileChanger
 
+
 class Data:
     strings = []
     total = 0
+
     def __init__(self, num):
         total = num
         for x in range(num):
             self.strings.append("")
 
     def replaceStrings(self, pos, val):
-        if (pos>self.total):
+        if (pos > self.total):
             print("not a valid index!")
             return
         self.strings.pop(pos)
@@ -19,13 +21,13 @@ class Data:
         return self.strings
 
     def getFullString(self, n):
-        if (n>self.total):
+        if (n > self.total):
             print("not a valid index!")
             return
         return self.strings[n]
 
     def getCourseName(self, n):
-        if (n>self.total):
+        if (n > self.total):
             print("not a valid index!")
             return
         s = self.strings[n]
@@ -35,7 +37,6 @@ class Data:
             return self.strings[s.index(';'):endInd]
         else:
             return ""
-
 
     # def getCourseLink(self, n):
     #     if (n>self.total):
@@ -54,11 +55,12 @@ class Data:
     #         return ""
 
     def getMeetingLink(self, n):
-        if (n>self.total):
+        if n > self.total:
             print("not a valid index!")
             return
         s = self.strings[n]
-        if (s.index(";") != -1):
+        if s.index(";") != -1:
+            # error here - code disappears
             newString = self.strings[s.index(';') + 1:]
             endInd = newString.find(";")
             return self.strings[endInd]
