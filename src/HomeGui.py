@@ -8,11 +8,13 @@ from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 from OpenLink import LinkOpener
 from Data import Data
-from src.FileChanger import FileChanger
+from FileChanger import FileChanger
 
 class Home(QDialog):
+    d = Data(8)
     def __init__(self):
         super(Home, self).__init__()
+
         self.setMinimumSize(1451, 891)
         loadUi("homeGui.ui", self)
         self.editCourse1.clicked.connect(self.editCourse_1)
@@ -40,7 +42,11 @@ class Home(QDialog):
         print('Editing Course 1')
         #AddClass().className.setText(Data.getCourseName)
         #AddClass()
-        edit_course=AddClass()
+
+        edit_course = AddClass(self.d, 0)
+        # edit_course.d = self.d
+        # edit_course.courseNum = 0
+        # edit_course.writeToList(self.d, 0)
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
@@ -90,8 +96,7 @@ class Home(QDialog):
 
     def launchCourse_1(self):
         print('Launching Course 1')
-        d = Data(8)
-        print('got here')
+
         # LinkOpener.openLink(d.getCourseName(0))
         # LinkOpener.openLink(d.getCourseLink(0))
         # LinkOpener.openLink(d.getMeetingLink(0))
@@ -139,10 +144,18 @@ class Home(QDialog):
 #--------------------------------------------------------------------------------------------
 
 class AddClass(QDialog):
-    def __init__(self):
+    def __init__(self, d=None, courseNum=None):
         super(AddClass, self).__init__()
         loadUi("addClassGUI.ui", self)
         self.classEntered.clicked.connect(self.classDataInput)
+
+        if d is not None and courseNum is not None:
+            print('-------------------here')
+            self.dataObject = d
+            self.courseNumber = courseNum
+            print(self.dataObject)
+
+            print('---------------end init')
 
     # called when user presses save
     def classDataInput(self):
@@ -155,7 +168,11 @@ class AddClass(QDialog):
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
-        #AddClass.writeToList()
+        print('before writing to list')
+        print(self.dataObject, self.courseNumber)
+        AddClass.writeToList(self.d, self.courseNum)
+        print('after writing to list')
+
         back = Home()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
@@ -163,6 +180,7 @@ class AddClass(QDialog):
     # Write to list
     # pass in Data object d and course number
     def writeToList(self, d, num):
+        print('inside writeToList')
         courseName = self.className.text()
         courseLink = self.classLink.text()
         meetingLink = self.meetingLink.text()

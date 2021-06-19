@@ -1,2 +1,0 @@
-apple;apple.com;apple.com
-china;china.com;china.com
