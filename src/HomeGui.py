@@ -150,6 +150,7 @@ class AddClass(QDialog):
     def __init__(self, d=None, courseNum=None):
         super(AddClass, self).__init__()
         loadUi("addClassGUI.ui", self)
+        self.classEntered.setObjectName("TEST")
         self.classEntered.clicked.connect(self.classDataInput)
 
         if d is not None and courseNum is not None:
