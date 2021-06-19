@@ -12,7 +12,7 @@ class Home(QDialog):
     def __init__(self):
         super(Home, self).__init__()
         loadUi("homeGui.ui", self)
-
+        self.editCourse1.clicked.connect(lambda: print("edit 1 hit"))
 
 app = QApplication(sys.argv)
 mainwindow = Home()
