@@ -4,10 +4,10 @@ import webbrowser
 class LinkOpener:
     theURL = ""
 
-    def openLink(self, toOpen):
+    @staticmethod
+    def openLink(toOpen):
         theURL = toOpen
-        if (self.isValid(theURL)):
-            webbrowser.open(theURL)
+        webbrowser.open(theURL)
 
     def isValid(self, urlStr):
 
@@ -21,7 +21,4 @@ class LinkOpener:
             print("this link is not valid!")
             return False
 
-    # pass in string to open
-    @staticmethod
-    def openLink(s):
-        webbrowser.open(s)
+
