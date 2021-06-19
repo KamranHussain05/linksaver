@@ -1,25 +1,33 @@
 # Author: Kamran Hussain
 # Date: 6/18/21
 # Dependencies: PyQt5, home.ui, homegui.py, qt -> addClassGui.py
+
 from FileChanger import FileChanger
-import HomeGui
+from src import HomeGui
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 
 
-# adds class
-class AddClass(QDialog):
+class addClass(QDialog):
     def __init__(self):
-        super(AddClass, self).__init__()
+        super(addClass, self).__init__()
         loadUi("addClassGUI.ui", self)
         self.classEntered.clicked.connect(self.classDataInput)
 
     # called when user presses save
     def classDataInput(self):
-        AddClass.writeToList()
-        AddClass.close()
+        addClass.writeToList()
+        courseName = self.className.text()
+        courseLink = self.classLink.text()
+        meetingLink = self.meetingLink.text()
+
+        print('Inputted Data')
+        print('Class name' + courseName)
+        print('Class Link' + courseLink)
+        print('Meeting Link' + meetingLink)
+        addClass.close()
 
     # Write to list
     # pass in Data object d and course number
@@ -40,7 +48,7 @@ class AddClass(QDialog):
 
 
 app = QApplication(sys.argv)
-mainwindow = AddClass()
+mainwindow = addClass()
 widget = QtWidgets.QStackedWidget()
 widget.addWidget(mainwindow)
 widget.setFixedWidth(710)

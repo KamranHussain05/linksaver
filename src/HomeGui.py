@@ -3,16 +3,19 @@
 #Dependencies
 
 import sys
+
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
-from src import AddClass
+from AddClass import *
+
 
 class Home(QDialog):
     def __init__(self):
         super(Home,self).__init__()
         loadUi("home.ui",self)
-        self.editCourse1.clicked.connect(AddClass())
+
+        self.editCourse1.clicked.connect(addClass())
         self.editCourse2.clicked.connect(self.editCourse2)
         self.editCourse3.clicked.connect(self.editCourse3)
         self.editCourse4.clicked.connect(self.editCourse4)
@@ -33,7 +36,7 @@ class Home(QDialog):
     def editCourse1(self, addClass):
         print('course 1 edited')
 
-    def refresh(selfself):
+    def refresh(self):
         print('got here')
 
 app=QApplication(sys.argv)
