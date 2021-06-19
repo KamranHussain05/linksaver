@@ -41,8 +41,22 @@ class Data:
         if (n>self.total):
             print("not a valid index!")
             return
+<<<<<<< HEAD
         s = self.strings[n] 
         
+=======
+        s = self.strings[n]
+        r = s[s.find(";")+1:]
+        rindex = r.find(";")
+        if (s.find(";") != -1 and rindex != -1):
+            s[s.find(';')+1: rindex]
+            self.strings[s.index(';') + 1:]
+            newString = self.strings[s.index(';') + 1:rindex]
+            return newString
+        else:
+             return ""
+
+>>>>>>> parent of 19f9f2c (remove check)
     def getMeetingLink(self, n):
         if n > self.total:
             print("not a valid index!")
