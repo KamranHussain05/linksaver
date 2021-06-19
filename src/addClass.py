@@ -1,6 +1,6 @@
 #Author: Kamran Hussain
 #Date: 6/18/21
-#Dependencies: PyQt5, home.ui, homegui.py,
+#Dependencies: PyQt5, home.ui, homegui.py, qt -> addClassGui.py
 
 import sys
 from PyQt5 import QtWidgets
