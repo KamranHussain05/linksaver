@@ -36,7 +36,7 @@ class AddClass(QDialog):
         except Exception as e:
             print("Error WriteToList: ", e)
 
-        HomeGui.refresh();
+        HomeGui.refresh()
 
 
 app = QApplication(sys.argv)
