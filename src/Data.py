@@ -3,8 +3,6 @@ class Data:
     strings = []
 
     def __init__(self, num):
-        total = num
-
         for x in range(num):
             self.strings.append("")
 
@@ -48,7 +46,7 @@ class Data:
             newString = self.strings[rindex+1]
             return newString
         else:
-            return "a"
+            return "bruhbruh"
 
     def printStrings(self):
         for s in self.strings:
