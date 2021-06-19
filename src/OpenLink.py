@@ -19,6 +19,8 @@ class LinkOpener:
             print("this link is not valid!")
             return False
 
+    def openLink(self):
+
 
 
 
