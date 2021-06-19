@@ -20,7 +20,7 @@ font-size: 14pt;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>260</x>
      <y>40</y>
      <width>201</width>
      <height>61</height>
