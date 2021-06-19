@@ -38,8 +38,8 @@ class Home(QDialog):
 
     def editCourse_1(self):
         print('Editing Course 1')
-        AddClass().className.setText(Data.getCourseName)
-        AddClass()
+        #AddClass().className.setText(Data.getCourseName)
+        #AddClass()
         edit_course=AddClass()
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
@@ -134,6 +134,9 @@ class Home(QDialog):
         self.launchCourse6.setText(d.getCourseName(5))
         self.launchCourse7.setText(d.getCourseName(6))
         self.launchCourse8.setText(d.getCourseName(7))
+
+#--------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------
 
 class AddClass(QDialog):
     def __init__(self):
