@@ -37,30 +37,54 @@ class Home(QDialog):
         self.help.clicked.connect(lambda: self.launchHelp())
 
     def editCourse_1(self):
+        print('Editing Course 1')
+        AddClass().className.setText(Data.getCourseName)
+        AddClass()
         edit_course=AddClass()
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_2(self):
         print('Editing Course 2')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_3(self):
         print('Editing Course 3')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_4(self):
         print('Editing Course 4')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_5(self):
         print('Editing Course 5')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_6(self):
         print('Editing Course 6')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_7(self):
         print('Editing Course 7')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_8(self):
         print('Editing Course 8')
+        edit_course = AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     # ______________________________________
 
@@ -128,7 +152,7 @@ class AddClass(QDialog):
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
-        AddClass.writeToList()
+        #AddClass.writeToList()
         back = Home()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
