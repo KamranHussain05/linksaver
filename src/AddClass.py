@@ -18,15 +18,16 @@ class addClass(QDialog):
 
     # called when user presses save
     def classDataInput(self):
-        addClass.writeToList()
         courseName = self.className.text()
         courseLink = self.classLink.text()
         meetingLink = self.meetingLink.text()
 
         print('Inputted Data')
-        print('Class name' + courseName)
-        print('Class Link' + courseLink)
-        print('Meeting Link' + meetingLink)
+        print('Class name: ' + courseName)
+        print('Class Link: ' + courseLink)
+        print('Meeting Link: ' + meetingLink)
+
+        addClass.writeToList()
         addClass.close()
 
     # Write to list
