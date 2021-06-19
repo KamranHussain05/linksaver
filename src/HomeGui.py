@@ -100,6 +100,17 @@ class Home(QDialog):
     def launchHelp(self):
         print('Help Website Launched')
 
+    def refresh(self):
+        d=Data(8)
+        self.launchCourse1.setText(d.getCourseName(0))
+        self.launchCourse2.setText(d.getCourseName(1))
+        self.launchCourse3.setText(d.getCourseName(2))
+        self.launchCourse4.setText(d.getCourseName(3))
+        self.launchCourse5.setText(d.getCourseName(4))
+        self.launchCourse6.setText(d.getCourseName(5))
+        self.launchCourse7.setText(d.getCourseName(6))
+        self.launchCourse8.setText(d.getCourseName(7))
+
 class AddClass(QDialog):
     def __init__(self):
         super(AddClass, self).__init__()
@@ -117,7 +128,7 @@ class AddClass(QDialog):
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
-        #AddClass.writeToList()
+        AddClass.writeToList()
         back = Home()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
