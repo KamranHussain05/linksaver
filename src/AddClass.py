@@ -3,7 +3,7 @@
 # Dependencies: PyQt5, home.ui, homegui.py, qt -> addClassGui.py
 
 from FileChanger import FileChanger
-from src import HomeGui
+import HomeGui
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication

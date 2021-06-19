@@ -1,21 +1,21 @@
-#Author: Kamran Hussain
-#Date: 4/18/21
-#Dependencies
+# Author: Kamran Hussain
+# Date: 4/18/21
+# Dependencies
 
 import sys
 
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
-from AddClass import *
+import AddClass
 
 
 class Home(QDialog):
     def __init__(self):
-        super(Home,self).__init__()
-        loadUi("home.ui",self)
+        super(Home, self).__init__()
+        loadUi(self, "home.ui")
 
-        self.editCourse1.clicked.connect(addClass())
+        self.editCourse1.clicked.connect(AddClass.addClass())
         self.editCourse2.clicked.connect(self.editCourse2)
         self.editCourse3.clicked.connect(self.editCourse3)
         self.editCourse4.clicked.connect(self.editCourse4)
@@ -39,9 +39,10 @@ class Home(QDialog):
     def refresh(self):
         print('got here')
 
-app=QApplication(sys.argv)
-mainwindow=Home()
-widget=QtWidgets.QStackedWidget()
+
+app = QApplication(sys.argv)
+mainwindow = Home()
+widget = QtWidgets.QStackedWidget()
 widget.addWidget(mainwindow)
 widget.setFixedWidth(1412)
 widget.setFixedHeight(948)
