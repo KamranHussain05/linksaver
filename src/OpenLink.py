@@ -18,7 +18,3 @@ class LinkOpener:
         else:
             print("this link is not valid!")
             return False
-
-
-
-
