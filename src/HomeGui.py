@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 from OpenLink import LinkOpener
 from Data import Data
-
+from AddClass import addClass
 
 class Home(QDialog):
     def __init__(self):
@@ -38,7 +38,7 @@ class Home(QDialog):
 
     def editCourse_1(self):
         print('Editing Course 1')
-        self.editCourse1.getCourseName()
+        addClass.show()
 
     def editCourse_2(self):
         print('Editing Course 2')
@@ -66,7 +66,8 @@ class Home(QDialog):
     def launchCourse_1(self):
         print('Launching Course 1')
         d = Data(8)
-        LinkOpener.openLink(d.getMeetingLink(0))
+        print('got here')
+        print(d.getMeetingLink(self, 1))
 
     def launchCourse_2(self):
         print('Launching Course 2')
