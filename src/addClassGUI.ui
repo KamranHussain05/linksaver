@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>512</height>
+    <width>1451</width>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@ font-size: 14pt;</string>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>40</y>
+     <x>620</x>
+     <y>30</y>
      <width>201</width>
      <height>61</height>
     </rect>
@@ -44,8 +44,8 @@ text-align: center;</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>160</y>
+     <x>380</x>
+     <y>150</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -61,8 +61,8 @@ font-size: 16pt;</string>
   <widget class="QLineEdit" name="className">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>150</y>
+     <x>530</x>
+     <y>140</y>
      <width>531</width>
      <height>61</height>
     </rect>
@@ -74,8 +74,8 @@ font-size: 16pt;</string>
   <widget class="QPushButton" name="classEntered">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>460</y>
+     <x>360</x>
+     <y>450</y>
      <width>711</width>
      <height>61</height>
     </rect>
@@ -90,8 +90,8 @@ font-size: 16pt;</string>
   <widget class="QLineEdit" name="classLink">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>240</y>
+     <x>530</x>
+     <y>230</y>
      <width>531</width>
      <height>61</height>
     </rect>
@@ -103,8 +103,8 @@ font-size: 16pt;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>250</y>
+     <x>380</x>
+     <y>240</y>
      <width>111</width>
      <height>41</height>
     </rect>
@@ -120,8 +120,8 @@ font-size: 16pt;</string>
   <widget class="QLineEdit" name="meetingLink">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>330</y>
+     <x>530</x>
+     <y>320</y>
      <width>531</width>
      <height>61</height>
     </rect>
@@ -133,8 +133,8 @@ font-size: 16pt;</string>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>340</y>
+     <x>380</x>
+     <y>330</y>
      <width>121</width>
      <height>41</height>
     </rect>
