@@ -68,6 +68,8 @@ class Home(QDialog):
         d = Data(8)
         print('got here')
         LinkOpener.openLink(Data.getCourseName(0))
+        LinkOpener.openLink(Data.getCourseLink(0))
+        LinkOpener.openLink(Data.getMeetingLink(0))
 
     def launchCourse_2(self):
         print('Launching Course 2')

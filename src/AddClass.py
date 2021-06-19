@@ -7,8 +7,10 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
+from src.Data import Data
 
-class addClass(QDialog):
+
+class addClass(QDialog, Data()):
     def __init__(self):
         super(addClass, self).__init__()
         loadUi("addClassGUI.ui", self)
