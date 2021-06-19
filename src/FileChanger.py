@@ -3,7 +3,6 @@
 # and write to it as changes occur on HomeGui/AddCourse
 import os.path
 
-
 class FileChanger:
 
     # Used to the check if there is a 'data.txt' file
