@@ -3,14 +3,12 @@
 # Dependencies: PyQt5, home.ui, homegui.py, qt -> addClassGui.py
 
 from FileChanger import FileChanger
-import HomeGui
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 
-
-class addClass(QDialog=None):
+class addClass(QDialog):
     def __init__(self):
         super(addClass, self).__init__()
         loadUi("addClassGUI.ui", self)
@@ -44,8 +42,6 @@ class addClass(QDialog=None):
             FileChanger.write_file(d.returnStrings())
         except Exception as e:
             print("Error WriteToList: ", e)
-
-        HomeGui.refresh()
 
 
 app = QApplication(sys.argv)

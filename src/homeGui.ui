@@ -28,7 +28,7 @@
      <x>0</x>
      <y>0</y>
      <width>1451</width>
-     <height>121</height>
+     <height>134</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -43,7 +43,7 @@ text-align: center;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="help">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -584,7 +584,7 @@ font-size:15pt
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="settings">
    <property name="geometry">
     <rect>
      <x>1340</x>
