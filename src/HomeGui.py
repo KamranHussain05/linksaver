@@ -131,15 +131,17 @@ class Home(QDialog):
         print('Help Website Launched')
 
     def refresh(self):
+        print('Refreshing Home')
         d=Data(8)
-        self.launchCourse1.setText(d.getCourseName(0))
-        self.launchCourse2.setText(d.getCourseName(1))
-        self.launchCourse3.setText(d.getCourseName(2))
-        self.launchCourse4.setText(d.getCourseName(3))
-        self.launchCourse5.setText(d.getCourseName(4))
-        self.launchCourse6.setText(d.getCourseName(5))
-        self.launchCourse7.setText(d.getCourseName(6))
-        self.launchCourse8.setText(d.getCourseName(7))
+        self.launchCourse1.setObjectName("pee pee poo poo")
+        # self.launchCourse2.setObjectName(d.getCourseName(1))
+        # self.launchCourse3.setObjectName(d.getCourseName(2))
+        # self.launchCourse4.setObjectName(d.getCourseName(3))
+        # self.launchCourse5.setObjectName(d.getCourseName(4))
+        # self.launchCourse6.setobjectName(d.getCourseName(5))
+        # self.launchCourse7.setObjectName(d.getCourseName(6))
+        self.launchCourse8.setObjectName("pee pee poopoo")
+        print('Refreshed Home')
 
 #--------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------
@@ -170,11 +172,12 @@ class AddClass(QDialog):
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to list')
-        print(self.dataObject, self.courseNumber)
-        AddClass.writeToList(self.d, self.courseNum)
+        # print(self.dataObject, self.courseNumber)
+        # AddClass.writeToList(self.d, self.courseNum)
         print('after writing to list')
 
         back = Home()
+        back.refresh()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
 
