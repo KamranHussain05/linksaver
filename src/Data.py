@@ -48,7 +48,7 @@ class Data:
             newString = self.strings[rindex+1]
             return newString
         else:
-            return ""
+            return "a"
 
     def printStrings(self):
         for s in self.strings:
