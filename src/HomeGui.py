@@ -8,15 +8,15 @@ from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 from OpenLink import LinkOpener
 from Data import Data
-from AddClass import addClass
+from src.FileChanger import FileChanger
 
 class Home(QDialog):
     def __init__(self):
         super(Home, self).__init__()
         self.setMinimumSize(1451, 891)
         loadUi("homeGui.ui", self)
-        self.editCourse1.clicked.connect(lambda: self.editCourse_1())
-        self.editCourse2.clicked.connect(lambda: self.editCourse_2())
+        self.editCourse1.clicked.connect(self.editCourse_1)
+        self.editCourse2.clicked.connect(self.editCourse_2)
         self.editCourse3.clicked.connect(lambda: self.editCourse_3())
         self.editCourse4.clicked.connect(lambda: self.editCourse_4())
         self.editCourse5.clicked.connect(lambda: self.editCourse_5())
@@ -37,8 +37,9 @@ class Home(QDialog):
         self.help.clicked.connect(lambda: self.launchHelp())
 
     def editCourse_1(self):
-        print('Editing Course 1')
-        addClass.show()
+        edit_course=AddClass()
+        widget.addWidget(edit_course)
+        widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_2(self):
         print('Editing Course 2')
@@ -67,9 +68,9 @@ class Home(QDialog):
         print('Launching Course 1')
         d = Data(8)
         print('got here')
-        LinkOpener.openLink(Data.getCourseName(0))
-        LinkOpener.openLink(Data.getCourseLink(0))
-        LinkOpener.openLink(Data.getMeetingLink(0))
+        # LinkOpener.openLink(d.getCourseName(0))
+        # LinkOpener.openLink(d.getCourseLink(0))
+        # LinkOpener.openLink(d.getMeetingLink(0))
 
     def launchCourse_2(self):
         print('Launching Course 2')
@@ -99,10 +100,50 @@ class Home(QDialog):
     def launchHelp(self):
         print('Help Website Launched')
 
+class AddClass(QDialog):
+    def __init__(self):
+        super(AddClass, self).__init__()
+        loadUi("addClassGUI.ui", self)
+        self.classEntered.clicked.connect(self.classDataInput)
+
+    # called when user presses save
+    def classDataInput(self):
+        courseName = self.className.text()
+        courseLink = self.classLink.text()
+        meetingLink = self.meetingLink.text()
+
+        print('Inputted Data')
+        print('Class name: ' + courseName)
+        print('Class Link: ' + courseLink)
+        print('Meeting Link: ' + meetingLink)
+
+        #AddClass.writeToList()
+        back = Home()
+        widget.addWidget(back)
+        widget.setCurrentIndex(widget.currentIndex() - 1)
+
+    # Write to list
+    # pass in Data object d and course number
+    def writeToList(self, d, num):
+        courseName = self.className.text()
+        courseLink = self.classLink.text()
+        meetingLink = self.meetingLink.text()
+
+        # future => check if url is valid
+        s = courseName + ';' + courseLink + ';' + meetingLink
+        d.replaceStrings(num, s)
+        try:
+            FileChanger.write_file(d.returnStrings())
+        except Exception as e:
+            print("Error WriteToList: ", e)
 
 app = QApplication(sys.argv)
-mainwindow = Home()
 widget = QtWidgets.QStackedWidget()
-widget.addWidget(mainwindow)
+home_window = Home()
+widget.addWidget(home_window)
+widget.show()
+
+add_class = AddClass()
+widget.addWidget(add_class)
 widget.show()
 app.exec_()
