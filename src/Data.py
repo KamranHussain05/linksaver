@@ -1,3 +1,5 @@
+from FileChanger import FileChanger
+
 class Data:
     strings = []
     total = 0
@@ -12,6 +14,9 @@ class Data:
             return
         self.strings.pop(pos)
         self.strings.insert(pos, val)
+
+    def returnStrings(self):
+        return self.strings
 
     def getFullString(self, n):
         if (n>self.total):
