@@ -23,7 +23,7 @@ class Data:
             endInd = newString.find(";")
             return self.strings[s.index(';'):endInd]
         else:
-            return ""
+            return "English"
 
     def getCourseLink(self, n):
         s = self.strings[n]
@@ -35,7 +35,7 @@ class Data:
             newString = self.strings[s.index(';') + 1:rindex]
             return newString
         else:
-             return ""
+             return "classroom.google.com"
 
     def getMeetingLink(self, n):
         s = self.strings[n]
@@ -46,7 +46,7 @@ class Data:
             newString = self.strings[rindex+1]
             return newString
         else:
-            return "bruhbruh"
+            return "zoom.us"
 
     def printStrings(self):
         for s in self.strings:

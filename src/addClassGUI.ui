@@ -81,7 +81,8 @@ font-size: 16pt;</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(206, 197, 146)</string>
+    <string notr="true">background-color: rgb(206, 197, 146);
+border-radius: 20px;</string>
    </property>
    <property name="text">
     <string>Enter</string>

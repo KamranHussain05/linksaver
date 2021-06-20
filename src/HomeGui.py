@@ -6,6 +6,8 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
+from ui_homeGui import Ui_Dialog, QCoreApplication
+
 from OpenLink import LinkOpener
 from Data import Data
 from FileChanger import FileChanger
@@ -14,9 +16,9 @@ class Home(QDialog):
     d = Data(8)
     def __init__(self):
         super(Home, self).__init__()
-
         self.setMinimumSize(1451, 891)
         loadUi("homeGui.ui", self)
+
         self.editCourse1.clicked.connect(self.editCourse_1)
         self.editCourse2.clicked.connect(self.editCourse_2)
         self.editCourse3.clicked.connect(lambda: self.editCourse_3())
@@ -26,7 +28,7 @@ class Home(QDialog):
         self.editCourse7.clicked.connect(lambda: self.editCourse_7())
         self.editCourse8.clicked.connect(lambda: self.editCourse_8())
 
-        self.launchCourse1.clicked.connect(lambda: self.launchCourse_1())
+        self.launchCourse1.clicked.connect(self.launchCourse_1)
         self.launchCourse2.clicked.connect(lambda: self.launchCourse_2())
         self.launchCourse3.clicked.connect(lambda: self.launchCourse_3())
         self.launchCourse4.clicked.connect(lambda: self.launchCourse_4())
@@ -95,12 +97,8 @@ class Home(QDialog):
     # ______________________________________
 
     def launchCourse_1(self):
-        print('Launching Course 1')
-        d=Data(8)
-        print(d.getCourseName(0))
-        LinkOpener.openLink(d.getCourseName(0))
-        LinkOpener.openLink(d.getCourseLink(0))
-        LinkOpener.openLink(d.getMeetingLink(0))
+        LinkOpener.openLink("https://example.com")
+        LinkOpener.openLink("https://starwars.com")
 
     def launchCourse_2(self):
         print('Launching Course 2')
@@ -126,6 +124,9 @@ class Home(QDialog):
     # __________________________________________
     def launchSettings(self):
         print('Settings Launched')
+        goToSettings = Settings()
+        widget.addWidget(goToSettings)
+        widget.setCurrentIndex(widget.currentIndex() + 2)
 
     def launchHelp(self):
         print('Help Website Launched')
@@ -133,14 +134,8 @@ class Home(QDialog):
     def refresh(self):
         print('Refreshing Home')
         d=Data(8)
-        self.launchCourse1.setObjectName("pee pee poo poo")
-        # self.launchCourse2.setObjectName(d.getCourseName(1))
-        # self.launchCourse3.setObjectName(d.getCourseName(2))
-        # self.launchCourse4.setObjectName(d.getCourseName(3))
-        # self.launchCourse5.setObjectName(d.getCourseName(4))
-        # self.launchCourse6.setobjectName(d.getCourseName(5))
-        # self.launchCourse7.setObjectName(d.getCourseName(6))
-        self.launchCourse8.setObjectName("pee pee poopoo")
+        #reset = Ui_Dialog()
+        #reset.launchCourse1.setText(QCoreApplication.translate("Dialog", u"test", None))
         print('Refreshed Home')
 
 #--------------------------------------------------------------------------------------------
@@ -173,8 +168,8 @@ class AddClass(QDialog):
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to list')
-        # print(self.dataObject, self.courseNumber)
-        # AddClass.writeToList(self.d, self.courseNum)
+        #print(self.dataObject, self.courseNumber)
+        #AddClass.writeToList(self.d, self.courseNumber)
         print('after writing to list')
 
         back = Home()
@@ -197,6 +192,20 @@ class AddClass(QDialog):
             FileChanger.write_file(d.returnStrings())
         except Exception as e:
             print("Error WriteToList: ", e)
+#----------------------------------------------------------
+#----------------------------------------------------------
+class Settings(QDialog):
+    def __init__(self):
+        super(Settings, self).__init__()
+        self.setMinimumSize(1451, 891)
+        loadUi("settings.ui", self)
+        self.applied.clicked.connect(self.execute)
+
+    def execute(self):
+        print('settings applied')
+        back = Home()
+        widget.addWidget(back)
+        widget.setCurrentIndex(widget.currentIndex() - 2)
 
 app = QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
@@ -206,5 +215,9 @@ widget.show()
 
 add_class = AddClass()
 widget.addWidget(add_class)
+widget.show()
+
+window = Settings()
+widget.addWidget(window)
 widget.show()
 app.exec_()

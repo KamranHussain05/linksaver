@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1451</width>
-    <height>891</height>
+    <width>1452</width>
+    <height>893</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,7 +56,8 @@ text-align: center;</string>
     <string notr="true">color: rgb(253, 255, 255);
 background-color: rgb(162, 162, 121);
 font-size:18pt;
-text-align: center;</string>
+text-align: center;
+border-radius: 20px;</string>
    </property>
    <property name="text">
     <string>Help</string>
@@ -72,8 +73,17 @@ text-align: center;</string>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>10</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>10</number>
+    </property>
     <property name="bottomMargin">
-     <number>5</number>
+     <number>15</number>
     </property>
     <property name="spacing">
      <number>10</number>
@@ -90,18 +100,18 @@ text-align: center;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <y>100</y>
+         <width>351</width>
+         <height>221</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
-</string>
+font-size:15pt;
+border-radius: 20px;</string>
        </property>
        <property name="text">
-        <string>Course 2</string>
+        <string>Math</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
@@ -109,15 +119,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>121</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/economy-2.jpg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -154,17 +164,18 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
+font-size:15pt;
+border-radius: 20px;
 </string>
        </property>
        <property name="text">
-        <string>Course 6</string>
+        <string>History</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_7">
@@ -172,15 +183,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>111</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/photo-1515325595179-59cd5262ca53.jpg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -206,6 +217,9 @@ font-size:15pt
     </item>
     <item row="0" column="0">
      <widget class="QFrame" name="frame_5">
+      <property name="styleSheet">
+       <string notr="true">border-radius: 20px</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -216,18 +230,19 @@ font-size:15pt
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <y>100</y>
+         <width>351</width>
+         <height>221</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
+font-size:15pt;
+border-radius: 20px;
 </string>
        </property>
        <property name="text">
-        <string>Course 1</string>
+        <string>English</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
@@ -235,18 +250,30 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>121</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 20px;</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/download.jpg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>false</bool>
+       </property>
+       <property name="openExternalLinks">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QToolButton" name="editCourse1">
@@ -259,7 +286,8 @@ font-size:15pt
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: yellow;</string>
+        <string notr="true">background-color: yellow;
+border-radius: 20px;</string>
        </property>
        <property name="text">
         <string>...</string>
@@ -280,17 +308,18 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
+font-size:15pt;
+border-radius: 20px;
 </string>
        </property>
        <property name="text">
-        <string>Course 7</string>
+        <string>World Language</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_8">
@@ -298,15 +327,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>111</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/download.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -343,17 +372,18 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
+font-size:15pt;
+border-radius: 20px;
 </string>
        </property>
        <property name="text">
-        <string>Course 3</string>
+        <string>Science</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_4">
@@ -361,15 +391,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>121</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/images.jpg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -406,17 +436,18 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
+font-size:15pt;
+border-radius: 20px;
 </string>
        </property>
        <property name="text">
-        <string>Course 5</string>
+        <string>PE</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
@@ -424,15 +455,18 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>111</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius: 0px;</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/sports-balls.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -469,17 +503,17 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
-</string>
+font-size:15pt;
+border-radius: 20px;</string>
        </property>
        <property name="text">
-        <string>Course 4</string>
+        <string>Computer Science</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
@@ -487,15 +521,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>121</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/Screenshot 2021-06-19 170259.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -532,17 +566,17 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>90</y>
-         <width>361</width>
-         <height>241</height>
+         <width>351</width>
+         <height>231</height>
         </rect>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(206, 197, 146);
-font-size:15pt
-</string>
+font-size:15pt;
+border-radius: 20px;</string>
        </property>
        <property name="text">
-        <string>Course 8</string>
+        <string>Homeroom</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
@@ -550,15 +584,15 @@ font-size:15pt
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>361</width>
-         <height>91</height>
+         <width>351</width>
+         <height>111</height>
         </rect>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>../../../../Downloads/Screenshot 2021-06-18 203146.png</pixmap>
+        <pixmap>../../../../Downloads/Homeroom.jpg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -587,7 +621,7 @@ font-size:15pt
   <widget class="QPushButton" name="settings">
    <property name="geometry">
     <rect>
-     <x>1340</x>
+     <x>1350</x>
      <y>30</y>
      <width>75</width>
      <height>41</height>
@@ -595,7 +629,8 @@ font-size:15pt
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
-background-color: gray;</string>
+background-color: gray;
+border-radius: 20px;</string>
    </property>
    <property name="text">
     <string>Settings</string>
