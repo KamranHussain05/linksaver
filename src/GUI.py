@@ -48,7 +48,7 @@ class Home(QDialog):
         sourceButton='course1'
 
         edit_course = AddClass(self)
-        #edit_course.classDataInput(self, sourceButton) ********************************************
+        edit_course.classDataInput(sourceButton)
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
@@ -201,8 +201,6 @@ class AddClass(QDialog):
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to list')
-        # print(self.dataObject, self.courseNumber)
-        # AddClass.writeToList(self.d, self.courseNumber)
         d = Datajson()
         d.editIndexSource(indexSource, courseName, courseLink,meetingLink)
         print('after writing to list')
