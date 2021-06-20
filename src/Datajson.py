@@ -26,9 +26,11 @@ class Datajson:
         print(f'editing index source{buttonName}, {className}, {courselink}, {meetingLink}')
         print(f'{self.properties} {len(self.properties)}')
 
+        if len(self.properties) <= 0:
+            self.addButtonFunction(self, buttonName, className, courselink, meetingLink)
+
         for course in self.properties:
             print('Marker 1')
-
             if(course['index_source'] == buttonName and self.check_file() and len(self.properties) > 0):
                 print("marker2")
                 course['class_name'] = className
@@ -37,8 +39,8 @@ class Datajson:
             else:
                 print("marker2")
                 self.addButtonFunction(self,buttonName, className, courselink, meetingLink)
-                return
-        self.addButtonFunction(self, buttonName, className, courselink, meetingLink)
+
+
 
     def addIndexSource(self, buttonName, className, courselink, meetingLink):
         print(f'adding index source{buttonName}, {className}, {courselink}, {meetingLink}')
