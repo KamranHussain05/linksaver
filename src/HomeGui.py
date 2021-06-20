@@ -130,6 +130,7 @@ class Home(QDialog):
 
     def launchHelp(self):
         print('Help Website Launched')
+        LinkOpener.openLink("https://github.com/KamranHussain05/linksaver")
 
     def refresh(self):
         print('Refreshing Home')
