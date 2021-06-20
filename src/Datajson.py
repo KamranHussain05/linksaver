@@ -5,9 +5,10 @@ import os
 class Datajson:
     def __init__(self):
         self.filePath = "Data.json"
-        self.properties = properties = []
+        properties = []
+        self.properties = properties
         with open(self.filePath, 'r+') as self.propertiesJSON:
-            properties = json.load(self.propertiesJSON)
+            self.properties = json.load(self.propertiesJSON)
 
 
     # Used to the check if there is a 'data.txt' file
@@ -20,21 +21,25 @@ class Datajson:
         with open(self.filePath, 'w') as f:
             json.dump(dumpFile, f)
 
-
-    def editButton(self, buttonName, className, courselink, meetingLink):
+    #Edits the index source with buttonName being the name of the index source,
+    def editIndexSource(self, buttonName, className, courselink, meetingLink):
+        print(f'editing index source{buttonName}, {className}, {courselink}, {meetingLink}')
+        print(f'{self.properties} {len(self.properties)}')
 
         for course in self.properties:
-            if(course['button'] == buttonName):
+            if(course['index_source'] == buttonName and self.check_file() and len(self.properties) > 0):
+                print("marker1")
                 course['class_name'] = className
                 course['class_link'] = courselink
                 course['meeting_link'] = meetingLink
             else:
+                print("marker2")
                 self.addButtonFunction(self,buttonName, className, courselink, meetingLink)
 
-    def addButtonFunction(self, buttonName, className, courselink, meetingLink):
-
+    def addIndexSource(self, buttonName, className, courselink, meetingLink):
+        print(f'adding index source{buttonName}, {className}, {courselink}, {meetingLink}')
         newClass = {
-            "button": f"{buttonName}",
+            "index_source": f"{buttonName}",
             "class_name": f"{className}",
             "class_link": f"{courselink}",
             "meeting_link": f"{meetingLink}"

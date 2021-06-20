@@ -6,11 +6,12 @@ import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
-from ui_homeGui import Ui_Dialog, QCoreApplication
+
 
 from OpenLink import LinkOpener
 from Data import Data
 from FileChanger import FileChanger
+from Datajson import Datajson
 
 
 class Home(QDialog):
@@ -202,6 +203,8 @@ class AddClass(QDialog):
         print('before writing to list')
         # print(self.dataObject, self.courseNumber)
         # AddClass.writeToList(self.d, self.courseNumber)
+        d = Datajson()
+        d.editIndexSource(indexSource, courseName, courseLink,meetingLink)
         print('after writing to list')
 
         back = Home()
