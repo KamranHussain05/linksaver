@@ -15,7 +15,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(710, 512)
-        Dialog.setStyleSheet("background-color: rgb(68, 68, 68);\n"
+        Dialog.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font-size: 14pt;")
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(250, 40, 201, 61))
@@ -32,7 +32,7 @@ class Ui_Dialog(object):
         self.label_2.setObjectName("label_2")
         self.className = QtWidgets.QLineEdit(Dialog)
         self.className.setGeometry(QtCore.QRect(170, 150, 531, 61))
-        self.className.setStyleSheet("color: rgb(255, 255, 255)")
+        self.className.setStyleSheet("color: rgb(0, 0, 0)")
         self.className.setObjectName("className")
         self.classEntered = QtWidgets.QPushButton(Dialog)
         self.classEntered.setGeometry(QtCore.QRect(0, 460, 711, 61))

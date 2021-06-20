@@ -1,0 +1,24 @@
+{
+  "color_scheme": [
+    {
+      "scheme_name": "Light Mode",
+      "background_color": "rgb(255, 255, 255)",
+      "text_color_1": "rgb(0,0,0)",
+      "text_color_2": "rgb(0,0,0)",
+      "button_color_1": "rgh(255, 255, 255)",
+      "button_color_2": "rgb(255, 255, 255)",
+      "settings_color": "rgb(255, 255, 255)",
+      "help_color": "rgb(255, 255, 255)"
+    },
+    {
+      "scheme_name": "Dark Mode",
+      "background_color": "rgb(68, 68, 68)",
+      "text_color_1": "rgb(255, 255, 255)",
+       "text_color_1": "rgb(255, 255, 255)",
+      "button_color_1": "rgb(0,0,0)",
+      "button_color_2": "rgb(0,0,0)",
+      "settings_color": "rgb(0,0,0)",
+      "help_color": "rgb(0,0,0)"
+    }
+  ]
+}
