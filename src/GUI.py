@@ -170,7 +170,6 @@ class Home(QDialog):
         # reset.launchCourse1.setText(QCoreApplication.translate("Dialog", u"test", None))
         print('Refreshed Home')
 
-
 # --------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------
 
