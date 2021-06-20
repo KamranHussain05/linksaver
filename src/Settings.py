@@ -10,10 +10,10 @@ class Settings(QDialog):
     def __init__(self):
         super(Settings, self).__init__()
         loadUi("Settings.ui", self)
-        self.button1.clicked.connect(lambda: self.changeColor())
-        self.button2.clicked.connect(lambda: self.button_2())
-        self.button3.clicked.connect(lambda: self.button_3())
-        self.button4.clicked.connect(lambda: self.button_4())
+        self.button1.clicked.connect(self.changeColor)
+        self.button2.clicked.connect(self.button_2)
+        self.button3.clicked.connect(self.button_3)
+        self.button4.clicked.connect(self.button_4)
         self.closeButton.clicked.connect(lambda: self.closeTab(self))
 
     def changeColor(self):

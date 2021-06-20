@@ -40,15 +40,16 @@ class Home(QDialog):
         self.launchCourse7.clicked.connect(self.launchCourse_7)
         self.launchCourse8.clicked.connect(self.launchCourse_8)
 
-        self.settings.clicked.connect(lambda: self.launchSettings())
-        self.help.clicked.connect(lambda: self.launchHelp())
+        self.settings.clicked.connect(self.launchSettings)
+        self.help.clicked.connect(self.launchHelp)
 
     def editCourse_1(self):
         print('Editing Course 1')
-        sourceButton='course1'
+        s="course1"
+        s.__str__()
 
         edit_course = AddClass(self)
-        edit_course.classDataInput(sourceButton)
+        edit_course.classDataInput(s.__str__())
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
@@ -190,20 +191,21 @@ class AddClass(QDialog):
 
     # called when user presses save
     def classDataInput(self, source):
-        indexSource=source
+        source.__str__()
         courseName = self.className.text()
         courseLink = self.classLink.text()
         meetingLink = self.meetingLink.text()
 
         print('Inputted Data')
+        print('Source: ' + source)
         print('Class name: ' + courseName)
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
-        print('before writing to list')
+        print('before writing to JSON')
         d = Datajson()
-        d.editIndexSource(indexSource, courseName, courseLink,meetingLink)
-        print('after writing to list')
+        d.editIndexSource(source, courseName, courseLink,meetingLink)
+        print('after writing to JSON')
 
         back = Home()
         back.refresh()
