@@ -12,8 +12,10 @@ from OpenLink import LinkOpener
 from Data import Data
 from FileChanger import FileChanger
 
+
 class Home(QDialog):
     d = Data(8)
+
     def __init__(self):
         super(Home, self).__init__()
         self.setMinimumSize(1451, 891)
@@ -21,29 +23,29 @@ class Home(QDialog):
 
         self.editCourse1.clicked.connect(self.editCourse_1)
         self.editCourse2.clicked.connect(self.editCourse_2)
-        self.editCourse3.clicked.connect(lambda: self.editCourse_3())
-        self.editCourse4.clicked.connect(lambda: self.editCourse_4())
-        self.editCourse5.clicked.connect(lambda: self.editCourse_5())
-        self.editCourse6.clicked.connect(lambda: self.editCourse_6())
-        self.editCourse7.clicked.connect(lambda: self.editCourse_7())
-        self.editCourse8.clicked.connect(lambda: self.editCourse_8())
+        self.editCourse3.clicked.connect(self.editCourse_3)
+        self.editCourse4.clicked.connect(self.editCourse_4)
+        self.editCourse5.clicked.connect(self.editCourse_5)
+        self.editCourse6.clicked.connect(self.editCourse_6)
+        self.editCourse7.clicked.connect(self.editCourse_7)
+        self.editCourse8.clicked.connect(self.editCourse_8)
 
         self.launchCourse1.clicked.connect(self.launchCourse_1)
-        self.launchCourse2.clicked.connect(lambda: self.launchCourse_2())
-        self.launchCourse3.clicked.connect(lambda: self.launchCourse_3())
-        self.launchCourse4.clicked.connect(lambda: self.launchCourse_4())
-        self.launchCourse5.clicked.connect(lambda: self.launchCourse_5())
-        self.launchCourse6.clicked.connect(lambda: self.launchCourse_6())
-        self.launchCourse7.clicked.connect(lambda: self.launchCourse_7())
-        self.launchCourse8.clicked.connect(lambda: self.launchCourse_8())
+        self.launchCourse2.clicked.connect(self.launchCourse_2)
+        self.launchCourse3.clicked.connect(self.launchCourse_3)
+        self.launchCourse4.clicked.connect(self.launchCourse_4)
+        self.launchCourse5.clicked.connect(self.launchCourse_5)
+        self.launchCourse6.clicked.connect(self.launchCourse_6)
+        self.launchCourse7.clicked.connect(self.launchCourse_7)
+        self.launchCourse8.clicked.connect(self.launchCourse_8)
 
         self.settings.clicked.connect(lambda: self.launchSettings())
         self.help.clicked.connect(lambda: self.launchHelp())
 
     def editCourse_1(self):
         print('Editing Course 1')
-        #AddClass().className.setText(Data.getCourseName)
-        #AddClass()
+        # AddClass().className.setText(Data.getCourseName)
+        # AddClass()
 
         edit_course = AddClass(self.d, 0)
         # edit_course.d = self.d
@@ -54,7 +56,9 @@ class Home(QDialog):
 
     def editCourse_2(self):
         print('Editing Course 2')
+        d=Data(1)
         edit_course = AddClass()
+        AddClass().className.setText(d.returnStrings())
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
@@ -97,29 +101,51 @@ class Home(QDialog):
     # ______________________________________
 
     def launchCourse_1(self):
-        LinkOpener.openLink("https://example.com")
-        LinkOpener.openLink("https://starwars.com")
+        d=Data(0)
+        LinkOpener.openLink(d.getCourseLink(0))
+        LinkOpener.openLink(d.getMeetingLink(0))
 
     def launchCourse_2(self):
         print('Launching Course 2')
+        d = Data(1)
+        LinkOpener.openLink(d.getCourseLink(1))
+        LinkOpener.openLink(d.getMeetingLink(1))
 
     def launchCourse_3(self):
         print('Launching Course 3')
+        d = Data(2)
+        LinkOpener.openLink(d.getCourseLink(2))
+        LinkOpener.openLink(d.getMeetingLink(2))
 
     def launchCourse_4(self):
         print('Launching Course 4')
+        d = Data(3)
+        LinkOpener.openLink(d.getCourseLink(3))
+        LinkOpener.openLink(d.getMeetingLink(3))
 
     def launchCourse_5(self):
         print('Launching Course 5')
+        d = Data(4)
+        LinkOpener.openLink(d.getCourseLink(4))
+        LinkOpener.openLink(d.getMeetingLink(4))
 
     def launchCourse_6(self):
         print('Launching Course 6')
+        d = Data(5)
+        LinkOpener.openLink(d.getCourseLink(5))
+        LinkOpener.openLink(d.getMeetingLink(5))
 
     def launchCourse_7(self):
         print('Launching Course 7')
+        d = Data(6)
+        LinkOpener.openLink(d.getCourseLink(6))
+        LinkOpener.openLink(d.getMeetingLink(6))
 
     def launchCourse_8(self):
         print('Launching Course 8')
+        d = Data(7)
+        LinkOpener.openLink(d.getCourseLink(7))
+        LinkOpener.openLink(d.getMeetingLink(7))
 
     # __________________________________________
     def launchSettings(self):
@@ -134,13 +160,14 @@ class Home(QDialog):
 
     def refresh(self):
         print('Refreshing Home')
-        d=Data(8)
-        #reset = Ui_Dialog()
-        #reset.launchCourse1.setText(QCoreApplication.translate("Dialog", u"test", None))
+        d = Data(8)
+        # reset = Ui_Dialog()
+        # reset.launchCourse1.setText(QCoreApplication.translate("Dialog", u"test", None))
         print('Refreshed Home')
 
-#--------------------------------------------------------------------------------------------
-#--------------------------------------------------------------------------------------------
+
+# --------------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------------
 
 class AddClass(QDialog):
     def __init__(self, d=None, courseNum=None):
@@ -169,8 +196,8 @@ class AddClass(QDialog):
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to list')
-        #print(self.dataObject, self.courseNumber)
-        #AddClass.writeToList(self.d, self.courseNumber)
+        # print(self.dataObject, self.courseNumber)
+        # AddClass.writeToList(self.d, self.courseNumber)
         print('after writing to list')
 
         back = Home()
@@ -193,8 +220,10 @@ class AddClass(QDialog):
             FileChanger.write_file(d.returnStrings())
         except Exception as e:
             print("Error WriteToList: ", e)
-#----------------------------------------------------------
-#----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# ----------------------------------------------------------
 class Settings(QDialog):
     def __init__(self):
         super(Settings, self).__init__()
@@ -207,6 +236,7 @@ class Settings(QDialog):
         back = Home()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 2)
+
 
 app = QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
