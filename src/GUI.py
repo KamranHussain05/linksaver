@@ -191,20 +191,20 @@ class AddClass(QDialog):
 
     # called when user presses save
     def classDataInput(self, source):
-        source.__str__()
         courseName = self.className.text()
         courseLink = self.classLink.text()
         meetingLink = self.meetingLink.text()
+        s = source.__str__()
 
         print('Inputted Data')
-        print('Source: ' + source)
+        print('Source: ' + s)
         print('Class name: ' + courseName)
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to JSON')
         d = Datajson()
-        d.editIndexSource(source, courseName, courseLink,meetingLink)
+        d.editIndexSource(s.__str__(), courseName, courseLink,meetingLink)
         print('after writing to JSON')
 
         back = Home()
