@@ -7,7 +7,6 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
 
-
 from OpenLink import LinkOpener
 from Data import Data
 from FileChanger import FileChanger
@@ -16,7 +15,7 @@ from Datajson import Datajson
 
 class Home(QDialog):
     d = Data(8)
-
+    print('marker 0, Home')
     def __init__(self):
         super(Home, self).__init__()
         self.setMinimumSize(1451, 891)
@@ -44,19 +43,22 @@ class Home(QDialog):
         self.help.clicked.connect(self.launchHelp)
 
     def editCourse_1(self):
+        print('marker 1a')
         print('Editing Course 1')
-        s="course1"
-        s.__str__()
-
+        s = "course1"
+        print(s)
         edit_course = AddClass(self)
-        edit_course.classDataInput(s.__str__())
+        edit_course.classDataInput(s)
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
     def editCourse_2(self):
+        print('marker 1b')
         print('Editing Course 2')
-
+        s='course2'
+        print(s)
         edit_course = AddClass()
+        edit_course.classDataInput(s)
         widget.addWidget(edit_course)
         widget.setCurrentIndex(widget.currentIndex() + 1)
 
@@ -100,56 +102,56 @@ class Home(QDialog):
 
     def launchCourse_1(self):
         print('Launching Course 1')
-        indexSource="course1"
-        d=Data(0)
+        indexSource = "course1"
+        d = Data(0)
         LinkOpener.openLink(d.getCourseLink(0))
         LinkOpener.openLink(d.getMeetingLink(0))
 
     def launchCourse_2(self):
         print('Launching Course 2')
-        indexSource="launchCourse2"
+        indexSource = "course2"
         d = Data(1)
         LinkOpener.openLink(d.getCourseLink(1))
         LinkOpener.openLink(d.getMeetingLink(1))
 
     def launchCourse_3(self):
         print('Launching Course 3')
-        indexSource="launchCourse3"
+        indexSource = "course3"
         d = Data(2)
         LinkOpener.openLink(d.getCourseLink(2))
         LinkOpener.openLink(d.getMeetingLink(2))
 
     def launchCourse_4(self):
         print('Launching Course 4')
-        indexSource="launchCourse4"
+        indexSource = "course4"
         d = Data(3)
         LinkOpener.openLink(d.getCourseLink(3))
         LinkOpener.openLink(d.getMeetingLink(3))
 
     def launchCourse_5(self):
         print('Launching Course 5')
-        indexSource="launchCourse5"
+        indexSource = "course5"
         d = Data(4)
         LinkOpener.openLink(d.getCourseLink(4))
         LinkOpener.openLink(d.getMeetingLink(4))
 
     def launchCourse_6(self):
         print('Launching Course 6')
-        indexSource="launchCourse6"
+        indexSource = "course6"
         d = Data(5)
         LinkOpener.openLink(d.getCourseLink(5))
         LinkOpener.openLink(d.getMeetingLink(5))
 
     def launchCourse_7(self):
         print('Launching Course 7')
-        indexSource="launchCourse7"
+        indexSource = "course7"
         d = Data(6)
         LinkOpener.openLink(d.getCourseLink(6))
         LinkOpener.openLink(d.getMeetingLink(6))
 
     def launchCourse_8(self):
         print('Launching Course 8')
-        indexSource="launchCourse8"
+        indexSource = "course8"
         d = Data(7)
         LinkOpener.openLink(d.getCourseLink(7))
         LinkOpener.openLink(d.getMeetingLink(7))
@@ -172,6 +174,7 @@ class Home(QDialog):
         # reset.launchCourse1.setText(QCoreApplication.translate("Dialog", u"test", None))
         print('Refreshed Home')
 
+
 # --------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------
 
@@ -180,37 +183,39 @@ class AddClass(QDialog):
         super(AddClass, self).__init__()
         loadUi("addClassGUI.ui", self)
         self.classEntered.clicked.connect(self.classDataInput)
-
-        if d is not None and courseNum is not None:
-            print('-------------------here')
-            self.dataObject = d
-            self.courseNumber = courseNum
-            print(self.dataObject)
-
-            print('---------------end init')
+        print('marker 2, Home')
+        print('In, innit method for AddClass, Marker')
+        # if courseNum is not None:
+        #     print('-------------------here')
+        #     self.courseNumber = courseNum
+        #     print(self.dataObject)
+        #     print('---------------end init')
 
     # called when user presses save
     def classDataInput(self, source):
+        print('marker 3, Home')
         courseName = self.className.text()
         courseLink = self.classLink.text()
         meetingLink = self.meetingLink.text()
-        s = source.__str__()
+        s = source
 
         print('Inputted Data')
-        print('Source: ' + s)
+        #print('Source: ' + s)
         print('Class name: ' + courseName)
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
 
         print('before writing to JSON')
         d = Datajson()
-        d.editIndexSource(s.__str__(), courseName, courseLink,meetingLink)
+        d.editIndexSource(s.__str__(), courseName, courseLink, meetingLink)
+        print('marker 4, Home')
         print('after writing to JSON')
 
         back = Home()
-        back.refresh()
+        #back.refresh()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
+        print('marker 5, Home')
 
     # Write to list
     # pass in Data object d and course number
@@ -231,6 +236,7 @@ class AddClass(QDialog):
 
 # ----------------------------------------------------------
 # ----------------------------------------------------------
+
 class Settings(QDialog):
     def __init__(self):
         super(Settings, self).__init__()
