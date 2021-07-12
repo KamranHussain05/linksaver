@@ -200,7 +200,7 @@ class AddClass(QDialog):
         s = source
 
         print('Inputted Data')
-        #print('Source: ' + s)
+        #print('Source: ' + source)
         print('Class name: ' + courseName)
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
