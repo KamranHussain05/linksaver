@@ -14,7 +14,7 @@ class Datajson:
     # Returns whether a file is present or not
     @staticmethod
     def check_file():
-        return os.path.isfile('data.json')
+        return os.path.isfile('Data.json')
 
     def createDataFile(self, dumpFile):
         with open(self.filePath, 'w') as f:
@@ -48,14 +48,14 @@ class Datajson:
             "class_link": f"{courselink}",
             "meeting_link": f"{meetingLink}"
         }
-
-        if not self.check_file("data.json"):
+        print('going to check for created file')
+        if not self.check_file("Data.json"):
             self.createDataFile(newClass)
-        else:
-            self.propertiesJSON.append(newClass)
-            self.propertiesJSON.seek(0, 0)
-            js_format = json.dumps(self.properties, indent=4)
-            self.propertiesJSON.write(js_format)
+        # else:
+        #     self.propertiesJSON.append(newClass)
+        #     self.propertiesJSON.seek(0, 0)
+        #     js_format = json.dumps(self.properties, indent=4)
+        #     self.propertiesJSON.write(js_format)
 
     # Added this method to pass error on line 30, error: method is undefined.
     def addButtonFunction(self, buttonName, className, courseLink, meetingLink, str):

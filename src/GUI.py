@@ -9,8 +9,8 @@ from PyQt5.uic import loadUi
 
 from OpenLink import LinkOpener
 from Data import Data
-from FileChanger import FileChanger
-from Datajson import Datajson
+#from FileChanger import FileChanger
+from JSONFileWriter import Datajson
 
 
 class Home(QDialog):
