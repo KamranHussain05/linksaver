@@ -9,13 +9,14 @@ from PyQt5.uic import loadUi
 
 from OpenLink import LinkOpener
 from Data import Data
-#from FileChanger import FileChanger
+# from FileChanger import FileChanger
 from JSONFileWriter import Datajson
 
 
 class Home(QDialog):
     d = Data(8)
     print('marker 0, Home')
+
     def __init__(self):
         super(Home, self).__init__()
         self.setMinimumSize(1451, 891)
@@ -55,7 +56,7 @@ class Home(QDialog):
     def editCourse_2(self):
         print('marker 1b')
         print('Editing Course 2')
-        s='course2'
+        s = 'course2'
         print(s)
         edit_course = AddClass()
         edit_course.classDataInput(s)
@@ -200,7 +201,7 @@ class AddClass(QDialog):
         s = source
 
         print('Inputted Data')
-        #print('Source: ' + source)
+        # print('Source: ' + source)
         print('Class name: ' + courseName)
         print('Class Link: ' + courseLink)
         print('Meeting Link: ' + meetingLink)
@@ -212,7 +213,7 @@ class AddClass(QDialog):
         print('after writing to JSON')
 
         back = Home()
-        #back.refresh()
+        # back.refresh()
         widget.addWidget(back)
         widget.setCurrentIndex(widget.currentIndex() - 1)
         print('marker 5, Home')
